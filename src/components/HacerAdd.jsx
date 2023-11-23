@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from '../hooks/useForm';
 
-export const TodoAdd = ({ handleNewTodo }) => {
+export const HacerAdd = ({ handleNewHacer }) => {
 	const { description, onInputChange, onResetForm } = useForm({
 		description: '',
 	});
@@ -11,13 +11,13 @@ export const TodoAdd = ({ handleNewTodo }) => {
 
 		if (description.length <= 1) return;
 
-		let newTodo = {
+		let newHacer = {
 			id: new Date().getTime(),
 			description: description,
 			done: false,
 		};
 
-		handleNewTodo(newTodo);
+		handleNewHacer(newHacer);
 		onResetForm();
 	};
 
@@ -29,7 +29,7 @@ export const TodoAdd = ({ handleNewTodo }) => {
 				name='description'
 				value={description}
 				onChange={onInputChange}
-				placeholder='¿Qué hay que hacer?'
+				placeholder='Ingrese la Tarea'
 			/>
 
 			<button className='btn-add' type='submit'>

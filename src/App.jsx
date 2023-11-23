@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import './App.css';
-import { TodoAdd } from './components/TodoAdd';
-import { TodoList } from './components/TodoList';
-import { useTodo } from './hooks/useTodo';
+import { HacerAdd } from './components/HacerAdd';
+import { HacerList } from './components/HacerList';
+import { useHacer } from './hooks/useHacer';
 
 function App() {
 	const {
 		todos,
 		todosCount,
 		pendingTodosCount,
-		handleNewTodo,
-		handleDeleteTodo,
-		handleCompleteTodo,
-		handleUpdateTodo,
-	} = useTodo();
+		handleNewHacer,
+		handleDeleteHacer,
+		handleCompleteHacer,
+		handleUpdateHacer,
+	} = useHacer();
 
 	return (
 		<>
 			<div className='card-to-do'>
-				<h1>Lista de tareas</h1>
+				<h1>Lista de tareas - Grupo 4 - Comisión 133</h1>
 				<div className='counter-todos'>
 					<h3>
-						N° Tareas: <span>{todosCount}</span>
+						Cantidad de Tareas: <span>{todosCount}</span>
 					</h3>
 					<h3>
 						Pendientes: <span>{pendingTodosCount}</span>
@@ -30,14 +30,14 @@ function App() {
 
 				<div className='add-todo'>
 					<h3>Agregar Tarea</h3>
-					<TodoAdd handleNewTodo={handleNewTodo} />
+					<HacerAdd handleNewHacer={handleNewHacer} />
 				</div>
 
-				<TodoList
+				<HacerList
 					todos={todos}
-					handleUpdateTodo={handleUpdateTodo}
-					handleDeleteTodo={handleDeleteTodo}
-					handleCompleteTodo={handleCompleteTodo}
+					handleUpdateHacer={handleUpdateHacer}
+					handleDeleteHacer={handleDeleteHacer}
+					handleCompleteHacer={handleCompleteHacer}
 				/>
 			</div>
 		</>
